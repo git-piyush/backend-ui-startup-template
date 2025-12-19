@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { IconDirective } from '@coreui/icons-angular';
+import { Component, NgModule } from '@angular/core';
+import { IconDirective, IconModule } from '@coreui/icons-angular';
+
+
 import {
   ButtonDirective,
   CardBodyComponent,
@@ -18,4 +20,8 @@ import {
   templateUrl: './register.component.html',
   imports: [ContainerComponent, RowComponent, ColComponent, CardComponent, CardBodyComponent, FormDirective, InputGroupComponent, InputGroupTextDirective, IconDirective, FormControlDirective, ButtonDirective]
 })
-export class RegisterComponent {}
+export class RegisterComponent {
+      constructor() {
+  }
+
+}

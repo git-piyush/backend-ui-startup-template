@@ -92,6 +92,7 @@ import {
   cilTrash,
   cilUnderline,
   cilUser,
+  cilPhone,
   cilUserFemale,
   cilUserFollow,
   cilUserUnfollow
@@ -194,6 +195,7 @@ export const iconSubset = {
   cilTrash,
   cilUnderline,
   cilUser,
+  cilPhone,
   cilUserFemale,
   cilUserFollow,
   cilUserUnfollow,
@@ -295,6 +297,7 @@ export enum IconSubset {
   cilTrash = 'cilTrash',
   cilUnderline = 'cilUnderline',
   cilUser = 'cilUser',
+  cilPhone = 'cilPhone',
   cilUserFemale = 'cilUserFemale',
   cilUserFollow = 'cilUserFollow',
   cilUserUnfollow = 'cilUserUnfollow',
