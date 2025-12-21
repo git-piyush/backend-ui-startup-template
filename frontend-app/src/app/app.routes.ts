@@ -57,6 +57,10 @@ export const routes: Routes = [
       {
         path: 'pages',
         loadChildren: () => import('./views/pages/routes').then((m) => m.routes)
+      },
+      {
+        path: 'profile',
+        loadChildren: () => import('./views/pages/routes').then((m) => m.routes)
       }
     ]
   },
@@ -75,10 +79,10 @@ export const routes: Routes = [
     }
   },
   // {
-  //   path: 'login',
-  //   loadComponent: () => import('./views/pages/login/login.component').then(m => m.LoginComponent),
+  //   path: 'profile',
+  //   loadComponent: () => import('./views/pages/profiledetails/profiledetails.component').then(m => m.ProfiledetailsComponent),
   //   data: {
-  //     title: 'Login Page'
+  //     title: 'Profile'
   //   }
   // },
   // {
