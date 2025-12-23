@@ -1,6 +1,5 @@
-.sticky-bottom {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+.footer {
+  background: #fff;
+  padding: 15px 0;
 }
+

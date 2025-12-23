@@ -1,0 +1,28 @@
+/* Center the login card and reduce width */
+.login-wrapper {
+  max-width: 450px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+/* Optional: make card look slightly elevated */
+.card {
+  border-radius: 8px;
+  padding: 20px;
+}
+
+/* Make form inputs consistent with profile form */
+.form-control.border-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+/* Button styling (same as Update Profile) */
+.btn-wd {
+  min-width: 120px;
+}
+
+.text-center {
+  margin-top: 20px;
+}
