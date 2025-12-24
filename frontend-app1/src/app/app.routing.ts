@@ -16,7 +16,7 @@ const routes: Routes =[
     children: [
         {
       path: 'user',
-      loadChildren: () => import('./layouts/user/user.module').then(x => x.UserModule)
+      loadChildren: () => import('./layouts/layout/layout.module').then(x => x.LayoutModule)
   }]},
   {
     path: '**',
