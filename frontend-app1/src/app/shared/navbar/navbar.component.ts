@@ -1,6 +1,8 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { ROUTES } from '../../sidebar/sidebar.component';
 import {Location, LocationStrategy, PathLocationStrategy} from '@angular/common';
+import { NavigationEnd, Router } from '@angular/router';
+import { AuthService } from 'app/service/auth.service';
 
 @Component({
     // moduleId: module.id,
@@ -13,17 +15,34 @@ export class NavbarComponent implements OnInit{
     location: Location;
     private toggleButton: any;
     private sidebarVisible: boolean;
+    isUserLoggedIn: boolean;
 
-    constructor(location: Location,  private element: ElementRef) {
-      this.location = location;
+    constructor(private router : Router,private authService: AuthService,location: Location,  private element: ElementRef) {
+          this.location = location;
           this.sidebarVisible = false;
     }
 
     ngOnInit(){
+          this.updateUserLoggedStatus();
+            this.router.events.subscribe(event=>{
+            if(event instanceof NavigationEnd){
+                this.updateUserLoggedStatus();
+            }
+            })
       this.listTitles = ROUTES.filter(listTitle => listTitle);
       const navbar: HTMLElement = this.element.nativeElement;
       this.toggleButton = navbar.getElementsByClassName('navbar-toggle')[0];
     }
+
+    onLogout(): void {
+        this.authService.clearAuth();
+        this.router.navigateByUrl("/user/login");
+    }
+
+      private updateUserLoggedStatus(){
+            this.isUserLoggedIn = this.authService.isAuthenticated();
+        }
+
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const body = document.getElementsByTagName('body')[0];

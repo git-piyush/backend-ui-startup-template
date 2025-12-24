@@ -66,9 +66,14 @@
                         <li><a href="#">Separated link</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a routerLink="/admin/login" routerLinkActive="active">
+                <li *ngIf="isUserLoggedIn">
+                    <a href="#"  (click)="onLogout()">
                         Log out
+                    </a>
+                </li>
+                <li *ngIf="!isUserLoggedIn">
+                    <a routerLink="/user/login" routerLinkActive="active">
+                        Log in
                     </a>
                 </li>
                 <li class="separator hidden-lg hidden-md"></li>
