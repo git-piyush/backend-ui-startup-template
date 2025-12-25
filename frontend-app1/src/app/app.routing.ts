@@ -9,14 +9,14 @@ import { LayoutComponent } from './layouts/layout/layout.component';
 const routes: Routes =[
   {
     path: '',
-    redirectTo: '/user',
+    redirectTo: '/',
     pathMatch: 'full',
   }, {
     path: '',
     component: LayoutComponent,
     children: [
         {
-      path: 'user',
+      path: '',
       loadChildren: () => import('./layouts/layout/layout.module').then(x => x.LayoutModule)
   }]},
   {
@@ -30,7 +30,7 @@ const routes: Routes =[
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes,{
-       useHash: true
+       useHash: false
     })
   ],
   exports: [

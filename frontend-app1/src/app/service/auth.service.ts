@@ -55,9 +55,9 @@ export class AuthService {
     return role === 'ADMIN';
   }
 
-  isCustomer(): boolean {
+  isUser(): boolean {
     const role = this.getFromStorage('role');
-    return role === 'CUSTOMER';
+    return role === 'USER';
   }
 
     isManager(): boolean {

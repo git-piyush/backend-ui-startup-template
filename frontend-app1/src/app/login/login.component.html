@@ -31,16 +31,21 @@
                 placeholder="Password"
                 [(ngModel)]="loginData.password"
                 name="password">
+                <br>
+                <a routerLink="/auth/register" routerLinkActive="active">Forgot Password</a>
             </div>
           </div>
         </div>
-
+        
         <div class="text-center">
-          <button type="submit" class="btn btn-info btn-fill btn-wd" (click)="onLogin()">Login</button>
+          <button type="submit" class="btn btn-info btn-fill btn-wd btn-sm-height" (click)="onLogin()">Login</button>
         </div>
-
+        <hr>
+        <p>Don't have an account?<a routerLink="/register" routerLinkActive="active">SIGN UP</a></p>
         <div class="clearfix"></div>
       </form>
     </div>
   </div>
 </div>
+<br>
+<br>

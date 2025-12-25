@@ -33,7 +33,7 @@ import { FooterModule } from 'app/shared/footer/footer.module';
         IconsComponent,
         MapsComponent,
         NotificationsComponent,
-        UpgradeComponent
+        UpgradeComponent,
   ],
   imports: [
     CommonModule,

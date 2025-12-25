@@ -36,9 +36,9 @@ export class LoginComponent implements OnInit {
           this.authService.storeToken('role', res.role);
           this.authService.storeToken('userName', res.userName);
           if(this.authService.isAdmin()){
-              this.router.navigate(['/admindashboard']);
-          }else if(this.authService.isCustomer()){
-              this.router.navigate(['/customeradmin'])
+              this.router.navigate(['/admin/dashboard']);
+          }else if(this.authService.isUser()){
+              this.router.navigate(['/user/dashboard'])
           }else if(this.authService.isManager()){
               this.router.navigate(['/admindashboard'])
           }

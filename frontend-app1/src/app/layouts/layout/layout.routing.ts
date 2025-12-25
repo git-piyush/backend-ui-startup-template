@@ -9,10 +9,12 @@ import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { LoginComponent } from 'app/login/login.component';
+import { RegisterComponent } from 'app/register/register.component';
 
 export const LayoutRoutes: Routes = [
     { path: '',component: HomeComponent },
     { path: 'admin/dashboard',component: HomeComponent },
+    { path: 'user/dashboard',component: HomeComponent },
     { path: 'admin/user',           component: UserComponent },
     { path: 'admin/table',          component: TablesComponent },
     { path: 'admin/typography',     component: TypographyComponent },
@@ -21,4 +23,5 @@ export const LayoutRoutes: Routes = [
     { path: 'admin/notifications',  component: NotificationsComponent },
     { path: 'admin/upgrade',        component: UpgradeComponent },
     { path: 'login',        component: LoginComponent },
+    { path: 'register',        component: RegisterComponent }
 ];
