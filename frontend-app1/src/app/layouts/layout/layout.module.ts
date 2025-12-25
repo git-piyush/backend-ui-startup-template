@@ -19,6 +19,7 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { FooterModule } from 'app/shared/footer/footer.module';
 
 
 
@@ -40,6 +41,7 @@ import { UpgradeComponent } from '../../upgrade/upgrade.component';
     NavbarModule,
     RouterModule,
     CommonModule,
+    FooterModule,
     RouterModule.forChild(LayoutRoutes),
         FormsModule,
         LbdModule,
