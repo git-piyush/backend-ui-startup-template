@@ -4,6 +4,7 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { LayoutComponent } from './layouts/layout/layout.component';
 
 const routes: Routes =[
   {
@@ -12,7 +13,7 @@ const routes: Routes =[
     pathMatch: 'full',
   }, {
     path: '',
-    component: AdminLayoutComponent,
+    component: LayoutComponent,
     children: [
         {
       path: 'user',
