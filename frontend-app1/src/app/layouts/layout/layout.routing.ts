@@ -10,11 +10,12 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { LoginComponent } from 'app/login/login.component';
 import { RegisterComponent } from 'app/register/register.component';
+import { AuthGuard } from 'app/guard/auth.guard';
 
 export const LayoutRoutes: Routes = [
-    { path: '',component: HomeComponent },
-    { path: 'admin/dashboard',component: HomeComponent },
-    { path: 'user/dashboard',component: HomeComponent },
+    { path: '',component: HomeComponent, canActivate:[AuthGuard] },
+    { path: 'admin/dashboard',component: HomeComponent, canActivate:[AuthGuard]  },
+    { path: 'user/dashboard',component: HomeComponent, canActivate:[AuthGuard]  },
     { path: 'admin/user',           component: UserComponent },
     { path: 'admin/table',          component: TablesComponent },
     { path: 'admin/typography',     component: TypographyComponent },

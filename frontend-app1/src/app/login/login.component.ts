@@ -46,14 +46,11 @@ export class LoginComponent implements OnInit {
         }
       },
       error: (err: any) => {
-        this.showError(err?.error?.message || err.message || 'Unable To Login: ' + err)
+        this.showError(err.error.message)
       }
     });
   }
     showError(msg: string){
-    this.error = msg;
-    setTimeout(()=> {
-      this.error = null
-    }, 4000);
+        alert(msg);
   }
 }
