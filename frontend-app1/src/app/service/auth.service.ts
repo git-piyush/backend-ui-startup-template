@@ -19,7 +19,8 @@ export class AuthService {
   }
     // AUTH API METHODS
   registerUser(body: any): Observable<any> {
-    return this.http.post(`${AuthService.BASE_URL}/auth/register`, body);
+    console.log('Registering user: ' + JSON.stringify(body.value));
+    return this.http.post(`${AuthService.BASE_URL}/auth/register`, body.value);
   }
   clearAuth(){
     this.logOut();

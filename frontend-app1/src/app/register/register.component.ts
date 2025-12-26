@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'app/service/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router) {}
+  constructor(private fb: FormBuilder, private router: Router, private authService:AuthService) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -30,15 +31,25 @@ export class RegisterComponent implements OnInit {
     return password === confirm ? null : { mismatch: true };
   }
 
-  onRegister(): void {
-    
+  onRegister(): void {    
     if (this.registerForm.valid) {
-      console.log('Registering user: ' + JSON.stringify(this.registerForm.value));
-      const userData = this.registerForm.value;
-      console.log('Registering user:', userData);
-      // TODO: Call backend API to register user
-      this.router.navigate(['/login']);
+          console.log('Registering user: ' + JSON.stringify(this.registerForm.value));
+          const userData = this.registerForm.value;      
+          this.authService.registerUser(this.registerForm).subscribe({
+            next: (res:any) => {
+              if (res.status === 200) {
+                  this.router.navigate(['/login']);                
+              }
+            },
+            error: (err: any) => {
+              this.showError(err.error.message);
+            }
+          });
     }
+  }
+  
+  showError(msg: string){
+        alert(msg);
   }
 }
 
